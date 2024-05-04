@@ -152,6 +152,9 @@ install_lib <- function(libname, url, reinstall = FALSE) {
 lib_is_installed <- function(libname, install_path) {
   if (file.exists(file.path(install_path, "lib", lib_name(libname))))
     return(TRUE)
+
+  if (file.exists(file.path(install_path, "libs", lib_name(libname))))
+    return(TRUE)
   
   if (file.exists(file.path(install_path, "lib64", lib_name(libname))))
     return(TRUE)
